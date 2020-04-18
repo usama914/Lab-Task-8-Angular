@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Angular Practice</title>
+    <link href="bootstrap.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+</head>
+<body>
+    <script>
+        var myapp = angular.module("myApp", []);
+        myapp.controller("myControler", function ($scope) {
+            $scope.num1 = 0;
+            $scope.num2 = 0;
+            myName = "Muhammad Usama Nosherwan";
+            $scope.getName = function () {
+                return myName;
+            }
+            $scope.multiplyNum = function(){
+                return $scope.num1 * $scope.num2;
+
+            }
+
+        });
+    </script>
+    <div ng-app="myApp" ng-controller="myControler">
+        <form ng-init="myvar=5">
+            <label>Num 1:</label>
+            <input type="text" ng-model="num1" />
+            <label>Num 2:</label>
+            <input type="text" ng-model="num2" />
+        </form>
+        <p> {{num1}}multiply by {{num2}} = {{multiplyNum()}}</p>
+        <h1>{{getName()}}</h1>
+
+    </div>
+
+
+</body>
+</html>
